@@ -1,0 +1,19 @@
+service: ism-layers
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  region: eu-west-1
+
+layers:
+  IsmCommon:
+    path: ism-common
+
+resources:
+  Outputs:
+    IsmCommonLayerExport:
+      Value:
+        Ref: IsmCommonLambdaLayer
+      Export:
+        Name: IsmCommonLambdaLayer

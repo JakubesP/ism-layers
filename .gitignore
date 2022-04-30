@@ -1,0 +1,6 @@
+**/dist/
+**/ism-common/node_modules/ 
+coverage
+.env
+.serverless
+.build
